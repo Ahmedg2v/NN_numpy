@@ -1,13 +1,11 @@
 import numpy as np
 import pandas as pd
-from sympy import false
-from Functions.preproccessing import numbers_to_one_hot
+from Functions.preprocessing import numbers_to_one_hot
 from Functions.losses import Cross_Entropy_Loss
 from Functions.optimizers import SGD, SGDmomentum, Adam
 from Functions.layers import Dense
 from Functions.activations import ReLU, Softmax, Tanh, LeakyReLU
 from Functions.train_test import Train, Test
-import gc
 
 params = np.load('trained_model1.npz', allow_pickle=True)
 
@@ -42,5 +40,3 @@ if retrain:
 
     Train(model, train_data, train_labels, batch_size=128, epochs=100, loss_func=Cross_Entropy_Loss, optimizer=Adam(learning_rate))
 
-       
-gc.collect()

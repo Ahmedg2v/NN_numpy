@@ -14,3 +14,11 @@ def Batch_gen(t_data,t_labels,batch_size):
     labels=np.array(labels)
     
     return data,labels
+
+def Batch_shuffle(data,labels):
+    rng = np.random.default_rng()
+    p=rng.permutation(len(data))
+    data=data[p]
+    labels=labels[p]
+
+    return data,labels

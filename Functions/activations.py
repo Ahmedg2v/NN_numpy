@@ -44,6 +44,16 @@ class LeakyReLU(Activation):
 
         super().__init__(leakyrelu, leakyrelu_drv)
 
+class Sigmoid(Activation):
+    def __init__(self):
+        def sigm(x):
+            return 1/(1+np.exp(-x))
+        
+        def sigm_drv(x):
+            return (1/(1+np.exp(-x)))*(1-(1/(1+np.exp(-x))))
+
+        super().__init__(sigm,sigm_drv)
+
 class Softmax(Layer):
     def forward(self, input):
         tmp = np.exp(input - np.max(input, axis=1, keepdims=True))

@@ -8,3 +8,12 @@ class Cross_Entropy_Loss:
     def backward(output,real):
         grad=(output - real) / len(output)
         return grad
+
+class MSE:
+    def forward(output,real):
+        mse= np.sum((real-output)**2)/len(output)
+        return mse
+    
+    def backward(output,real):
+        grad = (2/len(output)) * (output - real)
+        return grad

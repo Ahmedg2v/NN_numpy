@@ -43,5 +43,7 @@ def Test(model, test_data, test_labels, batch_size, loss_func):
     
     accuracy.append(np.sum(np.argmax(output, axis=1) ==  np.argmax(real, axis=1)) / len(np.argmax(output, axis=1)))  
     errors.append(loss_func.forward(output,real))
+    
     print(f'Test - Accuracy: {accuracy[-1]}, Loss: {errors[-1]}')
+
     return np.array(accuracy), np.array(errors)
