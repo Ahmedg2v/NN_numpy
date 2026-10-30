@@ -112,8 +112,7 @@ Pixel values are normalised to the range [0, 1], and the digit labels are conver
 The trained model [trained_model_MNIST.py](trained_model_MNIST.py) was tested on 5000 examples from test.csv and had an accuracy of 91.92%.
 
 This is a plot of the reported accuracy during the model's training:
-
-<img src="assets/acc_plot.png" alt="Accuracy over time" width="600">
+<img src="assets/acc_plot.png" alt="Accuracy over time" width="700">
 
 ### Running the MNIST Example
 
@@ -159,6 +158,7 @@ The number of neurons in the hidden layer can be changed from 8 to 4, but the ne
 - Python
 - NumPy
 - Pandas (for the MNIST CSV examples)
+- Matplotlib (for plotting accuracy over time)
 
 Clone the repository:
 
@@ -170,5 +170,5 @@ cd NN_numpy
 Install the dependencies:
 
 ```bash
-pip install numpy pandas
+pip install numpy pandas matplotlib
 ```
