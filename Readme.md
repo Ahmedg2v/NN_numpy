@@ -30,6 +30,8 @@ After downloading, place the CSV files in the root directory:
 
 ```text
 NN_numpy/
+├── assets/
+│   └── acc_plot.png
 │
 ├── Functions/
 │   ├── __init__.py
