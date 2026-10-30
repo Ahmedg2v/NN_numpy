@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from Functions.layers import Dense
 
 def save_model(model, filename):
@@ -13,3 +14,15 @@ def save_model(model, filename):
             dense_counter += 1
     
     np.savez(filename, **params, architecture=architecture)
+
+def plot(x,caption):
+    data=x
+    t = np.arange(0,len(x))
+    fig = plt.figure(figsize=(10,6))
+    
+    plt.plot(t, data, 'g')
+
+    plt.xlabel('Epoch', fontsize=14)
+    plt.ylabel(f'Accuracy (%)', fontsize=14)
+    plt.title(f'{caption}', fontsize=14)
+    plt.show()
